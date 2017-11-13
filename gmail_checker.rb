@@ -39,7 +39,7 @@ class MetasploitModule < Msf::Auxiliary
 
   def run
     print_status("Checking email")
-	target = datastore['CHEK_GMAIL']
+ 	target = datastore['CHEK_GMAIL']
     check_gmail(target) if datastore['CHEK_GMAIL']
    
   end
