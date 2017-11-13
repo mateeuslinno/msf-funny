@@ -20,7 +20,7 @@ class MetasploitModule < Msf::Auxiliary
 
     register_options(
       [
-        OptString.new('ENUMERATE_WORDPRESS', [true, 'check emails valid by gmail']),
+        OptString.new('ENUMERATE_WORDPRESS', [true, 'Worpdress Logins']),
      ])
 
 
